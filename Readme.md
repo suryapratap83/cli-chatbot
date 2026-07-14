@@ -5,6 +5,8 @@ A command-line chatbot built in Python using the Groq API.
 ## Features
 - Chat with an AI in your terminal
 - Multi-turn conversation (remembers context)
+- Show conversation history
+- Clear conversation history
 
 ## Setup
 
@@ -22,6 +24,8 @@ A command-line chatbot built in Python using the Groq API.
 ## Commands
 - Type any message to chat
 - Type `exit` to quit
+- Type `show history` to view conversation history
+- Type `clear history` to clear conversation history
 
 ## Status
 In progress
