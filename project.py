@@ -1,6 +1,7 @@
 import requests
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
@@ -33,9 +34,27 @@ def send_message(message, messages):
         print(r.text)
     return messages
 
+def show_history(messages):
+    if not messages:
+        print("No history")
+    else:
+        for i, message in enumerate(messages, 1):
+            print(f"{i}. {message['role']}: {message['content']}")
+
+def clear_history(messages):
+    if not messages:
+        print("No history found")
+    else:
+        messages.clear()
+        print("History cleared")
+
 while True:
     message = input("You: ")
-    if message.lower() == "exit":
+    if message.lower() == "show history":
+        show_history(messages)
+    elif message.lower() == "clear history":
+        clear_history(messages)
+    elif message.lower() == "exit":
         print("Goodbye")
         break
     else:
