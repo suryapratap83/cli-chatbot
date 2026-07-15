@@ -48,12 +48,22 @@ def clear_history(messages):
         messages.clear()
         print("History cleared")
 
+def save_conversation(messages):
+    if not messages:
+        print("No conversation found")
+    else:
+        with open("Conversation.json", "w") as f:
+            json.dump(messages, f)
+            print("Conversation saved")
+
 while True:
     message = input("You: ")
     if message.lower() == "show history":
         show_history(messages)
     elif message.lower() == "clear history":
         clear_history(messages)
+    elif message.lower() == "save conversation":
+        save_conversation(messages)
     elif message.lower() == "exit":
         print("Goodbye")
         break
