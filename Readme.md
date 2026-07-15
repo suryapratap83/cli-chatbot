@@ -7,6 +7,7 @@ A command-line chatbot built in Python using the Groq API.
 - Multi-turn conversation (remembers context)
 - Show conversation history
 - Clear conversation history
+- Save conversation to a JSON file
 
 ## Setup
 
@@ -26,6 +27,7 @@ A command-line chatbot built in Python using the Groq API.
 - Type `exit` to quit
 - Type `show history` to view conversation history
 - Type `clear history` to clear conversation history
+- Type `save conversation` to save the conversation
 
 ## Status
 In progress
