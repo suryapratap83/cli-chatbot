@@ -56,6 +56,14 @@ def save_conversation(messages):
             json.dump(messages, f)
             print("Conversation saved")
 
+def load_conversation():
+    if os.path.exists("Conversation.json"):
+        with open("Conversation.json", "r") as f:
+            return json.load(f)
+    else:
+        print("No saved conversation found")
+        return []
+
 while True:
     message = input("You: ")
     if message.lower() == "show history":
@@ -64,6 +72,8 @@ while True:
         clear_history(messages)
     elif message.lower() == "save conversation":
         save_conversation(messages)
+    elif message.lower() == "load conversation":
+        messages = load_conversation()
     elif message.lower() == "exit":
         print("Goodbye")
         break
