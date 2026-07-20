@@ -1,6 +1,6 @@
 # CLI Chatbot 🤖
 
-A command-line chatbot built in Python using the Groq API.
+A command-line chatbot built in Python using the Groq API. Supports multi-turn conversations with save and load functionality.
 
 ## Features
 - Chat with an AI in your terminal
@@ -17,20 +17,30 @@ A command-line chatbot built in Python using the Groq API.
    python -m venv venv
    venv\Scripts\activate
 3. Install dependencies:
-   pip install requests python-dotenv
+   pip install -r requirements.txt
 4. Create a .env file and add your Groq API key:
    GROQ_API_KEY=your-key-here
 5. Run:
    python chatbot.py
 
 ## Commands
-- Type any message to chat
-- Type `exit` to quit
-- Type `show history` to view conversation history
-- Type `clear history` to clear conversation history
-- Type `save conversation` to save the conversation
-- Type `load conversation` to load a saved conversation
+| Command | Description |
+|---------|-------------|
+| Any message | Chat with the AI |
+| `show history` | View full conversation history |
+| `clear history` | Clear conversation history |
+| `save conversation` | Save conversation to JSON file |
+| `load conversation` | Load a previously saved conversation |
+| `exit` | Quit the chatbot |
 
+## What I Learned
+- REST API integration with requests library
+- Environment variables for API key security
+- JSON for saving and loading data
+- Multi-turn conversation with message history
+- Virtual environments and dependency management
 
-## Status
-In progress
+## Tech Stack
+- Python 3
+- Groq API (llama-3.1-8b-instant)
+- python-dotenv
